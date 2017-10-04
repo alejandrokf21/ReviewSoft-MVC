@@ -1,0 +1,67 @@
+﻿@model ReviewSoftMVC.Models.USUARIO
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>USUARIO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FECHA_NACIMIENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECHA_NACIMIENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CORREO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CORREO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CONTRASEÑA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CONTRASEÑA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PROFESION1.NOMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PROFESION1.NOMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TIPO_USUARIO1.NOMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIPO_USUARIO1.NOMBRE)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CODIGO }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

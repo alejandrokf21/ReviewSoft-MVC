@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="REVIEWSOFTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CATEGORIA">
+    <Key>
+      <PropertyRef Name="CODIGO" />
+    </Key>
+    <Property Name="CODIGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar(max)" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="DETALLE">
+    <Key>
+      <PropertyRef Name="CODIGO" />
+    </Key>
+    <Property Name="CODIGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="METRICA" Type="int" Nullable="false" />
+    <Property Name="RETROALIMENTACION" Type="int" Nullable="false" />
+    <Property Name="PUNTAJE" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EMPRESA">
+    <Key>
+      <PropertyRef Name="CODIGO" />
+    </Key>
+    <Property Name="CODIGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar(max)" Nullable="false" />
+    <Property Name="FECHA_FUNDACION" Type="date" />
+    <Property Name="SITIO_WEB" Type="varchar(max)" />
+    <Property Name="CORREO" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="METRICA">
+    <Key>
+      <PropertyRef Name="CODIGO" />
+    </Key>
+    <Property Name="CODIGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar(max)" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PROFESION">
+    <Key>
+      <PropertyRef Name="CODIGO" />
+    </Key>
+    <Property Name="CODIGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar(max)" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="RETROALIMENTACION">
+    <Key>
+      <PropertyRef Name="CODIGO" />
+    </Key>
+    <Property Name="CODIGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar(max)" />
+    <Property Name="TIEMPO_USO" Type="varchar(max)" />
+    <Property Name="FRECUENCIA" Type="varchar(max)" />
+    <Property Name="USUARIO" Type="int" Nullable="false" />
+    <Property Name="SOFTWARE" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SOFTWARE">
+    <Key>
+      <PropertyRef Name="CODIGO" />
+    </Key>
+    <Property Name="CODIGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar(max)" Nullable="false" />
+    <Property Name="DEMO_GRATUITO" Type="bit" />
+    <Property Name="SOPORTE" Type="bit" />
+    <Property Name="AÑO" Type="date" />
+    <Property Name="CATEGORIA" Type="int" Nullable="false" />
+    <Property Name="TIPO_LICENCIA" Type="int" Nullable="false" />
+    <Property Name="TIPO_PLATAFORMA" Type="int" Nullable="false" />
+    <Property Name="EMPRESA" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TIPO_LICENCIA">
+    <Key>
+      <PropertyRef Name="CODIGO" />
+    </Key>
+    <Property Name="CODIGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar(max)" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="TIPO_PLATAFORMA">
+    <Key>
+      <PropertyRef Name="CODIGO" />
+    </Key>
+    <Property Name="CODIGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar(max)" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="TIPO_USUARIO">
+    <Key>
+      <PropertyRef Name="CODIGO" />
+    </Key>
+    <Property Name="CODIGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar(max)" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="USUARIO">
+    <Key>
+      <PropertyRef Name="CODIGO" />
+    </Key>
+    <Property Name="CODIGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar(max)" Nullable="false" />
+    <Property Name="FECHA_NACIMIENTO" Type="date" />
+    <Property Name="CORREO" Type="varchar(max)" Nullable="false" />
+    <Property Name="CONTRASEÑA" Type="varchar" MaxLength="16" Nullable="false" />
+    <Property Name="TIPO_USUARIO" Type="int" Nullable="false" />
+    <Property Name="PROFESION" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_CATEGORIA">
+    <End Role="CATEGORIA" Type="Self.CATEGORIA" Multiplicity="1" />
+    <End Role="SOFTWARE" Type="Self.SOFTWARE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CATEGORIA">
+        <PropertyRef Name="CODIGO" />
+      </Principal>
+      <Dependent Role="SOFTWARE">
+        <PropertyRef Name="CATEGORIA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMPRESA">
+    <End Role="EMPRESA" Type="Self.EMPRESA" Multiplicity="1" />
+    <End Role="SOFTWARE" Type="Self.SOFTWARE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPRESA">
+        <PropertyRef Name="CODIGO" />
+      </Principal>
+      <Dependent Role="SOFTWARE">
+        <PropertyRef Name="EMPRESA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_METRICA">
+    <End Role="METRICA" Type="Self.METRICA" Multiplicity="1" />
+    <End Role="DETALLE" Type="Self.DETALLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="METRICA">
+        <PropertyRef Name="CODIGO" />
+      </Principal>
+      <Dependent Role="DETALLE">
+        <PropertyRef Name="METRICA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROFESION">
+    <End Role="PROFESION" Type="Self.PROFESION" Multiplicity="1" />
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROFESION">
+        <PropertyRef Name="CODIGO" />
+      </Principal>
+      <Dependent Role="USUARIO">
+        <PropertyRef Name="PROFESION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RETROALIMENTACION">
+    <End Role="RETROALIMENTACION" Type="Self.RETROALIMENTACION" Multiplicity="1" />
+    <End Role="DETALLE" Type="Self.DETALLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RETROALIMENTACION">
+        <PropertyRef Name="CODIGO" />
+      </Principal>
+      <Dependent Role="DETALLE">
+        <PropertyRef Name="RETROALIMENTACION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SOFTWARE">
+    <End Role="SOFTWARE" Type="Self.SOFTWARE" Multiplicity="1" />
+    <End Role="RETROALIMENTACION" Type="Self.RETROALIMENTACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SOFTWARE">
+        <PropertyRef Name="CODIGO" />
+      </Principal>
+      <Dependent Role="RETROALIMENTACION">
+        <PropertyRef Name="SOFTWARE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TIPO_LICENCIA">
+    <End Role="TIPO_LICENCIA" Type="Self.TIPO_LICENCIA" Multiplicity="1" />
+    <End Role="SOFTWARE" Type="Self.SOFTWARE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPO_LICENCIA">
+        <PropertyRef Name="CODIGO" />
+      </Principal>
+      <Dependent Role="SOFTWARE">
+        <PropertyRef Name="TIPO_LICENCIA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TIPO_PLATAFORMA">
+    <End Role="TIPO_PLATAFORMA" Type="Self.TIPO_PLATAFORMA" Multiplicity="1" />
+    <End Role="SOFTWARE" Type="Self.SOFTWARE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPO_PLATAFORMA">
+        <PropertyRef Name="CODIGO" />
+      </Principal>
+      <Dependent Role="SOFTWARE">
+        <PropertyRef Name="TIPO_PLATAFORMA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TIPO_USUARIO">
+    <End Role="TIPO_USUARIO" Type="Self.TIPO_USUARIO" Multiplicity="1" />
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPO_USUARIO">
+        <PropertyRef Name="CODIGO" />
+      </Principal>
+      <Dependent Role="USUARIO">
+        <PropertyRef Name="TIPO_USUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USUARIO">
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="1" />
+    <End Role="RETROALIMENTACION" Type="Self.RETROALIMENTACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIO">
+        <PropertyRef Name="CODIGO" />
+      </Principal>
+      <Dependent Role="RETROALIMENTACION">
+        <PropertyRef Name="USUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="REVIEWSOFTModelStoreContainer">
+    <EntitySet Name="CATEGORIA" EntityType="Self.CATEGORIA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DETALLE" EntityType="Self.DETALLE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EMPRESA" EntityType="Self.EMPRESA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="METRICA" EntityType="Self.METRICA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PROFESION" EntityType="Self.PROFESION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RETROALIMENTACION" EntityType="Self.RETROALIMENTACION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SOFTWARE" EntityType="Self.SOFTWARE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TIPO_LICENCIA" EntityType="Self.TIPO_LICENCIA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TIPO_PLATAFORMA" EntityType="Self.TIPO_PLATAFORMA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TIPO_USUARIO" EntityType="Self.TIPO_USUARIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_CATEGORIA" Association="Self.FK_CATEGORIA">
+      <End Role="CATEGORIA" EntitySet="CATEGORIA" />
+      <End Role="SOFTWARE" EntitySet="SOFTWARE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMPRESA" Association="Self.FK_EMPRESA">
+      <End Role="EMPRESA" EntitySet="EMPRESA" />
+      <End Role="SOFTWARE" EntitySet="SOFTWARE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_METRICA" Association="Self.FK_METRICA">
+      <End Role="METRICA" EntitySet="METRICA" />
+      <End Role="DETALLE" EntitySet="DETALLE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROFESION" Association="Self.FK_PROFESION">
+      <End Role="PROFESION" EntitySet="PROFESION" />
+      <End Role="USUARIO" EntitySet="USUARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RETROALIMENTACION" Association="Self.FK_RETROALIMENTACION">
+      <End Role="RETROALIMENTACION" EntitySet="RETROALIMENTACION" />
+      <End Role="DETALLE" EntitySet="DETALLE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SOFTWARE" Association="Self.FK_SOFTWARE">
+      <End Role="SOFTWARE" EntitySet="SOFTWARE" />
+      <End Role="RETROALIMENTACION" EntitySet="RETROALIMENTACION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TIPO_LICENCIA" Association="Self.FK_TIPO_LICENCIA">
+      <End Role="TIPO_LICENCIA" EntitySet="TIPO_LICENCIA" />
+      <End Role="SOFTWARE" EntitySet="SOFTWARE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TIPO_PLATAFORMA" Association="Self.FK_TIPO_PLATAFORMA">
+      <End Role="TIPO_PLATAFORMA" EntitySet="TIPO_PLATAFORMA" />
+      <End Role="SOFTWARE" EntitySet="SOFTWARE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TIPO_USUARIO" Association="Self.FK_TIPO_USUARIO">
+      <End Role="TIPO_USUARIO" EntitySet="TIPO_USUARIO" />
+      <End Role="USUARIO" EntitySet="USUARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USUARIO" Association="Self.FK_USUARIO">
+      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End Role="RETROALIMENTACION" EntitySet="RETROALIMENTACION" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

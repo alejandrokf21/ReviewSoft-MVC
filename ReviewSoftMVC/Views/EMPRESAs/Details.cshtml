@@ -1,0 +1,51 @@
+﻿@model ReviewSoftMVC.Models.EMPRESA
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EMPRESA</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FECHA_FUNDACION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECHA_FUNDACION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SITIO_WEB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SITIO_WEB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CORREO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CORREO)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CODIGO }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

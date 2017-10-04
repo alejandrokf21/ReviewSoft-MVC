@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="20ec73933400441c95db7eaa97ed0f7a" Name="Diagram1">
+        <EntityTypeShape EntityType="REVIEWSOFTModel.CATEGORIA" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="REVIEWSOFTModel.DETALLE" Width="1.5" PointX="7.5" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="REVIEWSOFTModel.EMPRESA" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="REVIEWSOFTModel.METRICA" Width="1.5" PointX="5.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="REVIEWSOFTModel.PROFESION" Width="1.5" PointX="0.75" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="REVIEWSOFTModel.RETROALIMENTACION" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="REVIEWSOFTModel.SOFTWARE" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="REVIEWSOFTModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="REVIEWSOFTModel.TIPO_LICENCIA" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="REVIEWSOFTModel.TIPO_PLATAFORMA" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="REVIEWSOFTModel.TIPO_USUARIO" Width="1.5" PointX="0.75" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="REVIEWSOFTModel.USUARIO" Width="1.5" PointX="3" PointY="15.25" IsExpanded="true" />
+        <AssociationConnector Association="REVIEWSOFTModel.FK_CATEGORIA" ManuallyRouted="false" />
+        <AssociationConnector Association="REVIEWSOFTModel.FK_METRICA" ManuallyRouted="false" />
+        <AssociationConnector Association="REVIEWSOFTModel.FK_RETROALIMENTACION" ManuallyRouted="false" />
+        <AssociationConnector Association="REVIEWSOFTModel.FK_EMPRESA" ManuallyRouted="false" />
+        <AssociationConnector Association="REVIEWSOFTModel.FK_PROFESION" ManuallyRouted="false" />
+        <AssociationConnector Association="REVIEWSOFTModel.FK_SOFTWARE" ManuallyRouted="false" />
+        <AssociationConnector Association="REVIEWSOFTModel.FK_USUARIO" ManuallyRouted="false" />
+        <AssociationConnector Association="REVIEWSOFTModel.FK_TIPO_LICENCIA" ManuallyRouted="false" />
+        <AssociationConnector Association="REVIEWSOFTModel.FK_TIPO_PLATAFORMA" ManuallyRouted="false" />
+        <AssociationConnector Association="REVIEWSOFTModel.FK_TIPO_USUARIO" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

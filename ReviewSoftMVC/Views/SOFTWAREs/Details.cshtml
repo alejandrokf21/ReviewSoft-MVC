@@ -1,0 +1,83 @@
+﻿@model ReviewSoftMVC.Models.SOFTWARE
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SOFTWARE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DEMO_GRATUITO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DEMO_GRATUITO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SOPORTE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SOPORTE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AÑO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AÑO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CATEGORIA1.NOMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CATEGORIA1.NOMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMPRESA1.NOMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMPRESA1.NOMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TIPO_LICENCIA1.NOMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIPO_LICENCIA1.NOMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TIPO_PLATAFORMA1.NOMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIPO_PLATAFORMA1.NOMBRE)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CODIGO }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
