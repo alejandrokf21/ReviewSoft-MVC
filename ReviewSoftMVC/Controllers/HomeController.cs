@@ -21,7 +21,11 @@ namespace ReviewSoftMVC.Controllers
                 {
                    return RedirectToAction("Administrador", "Account");
                 }
-              
+                if (Session["useRol"].ToString().Equals("2"))
+                {
+                    return RedirectToAction("UsuarioBasico", "Account");
+                }
+
             }
             return View();
         }

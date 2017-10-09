@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="navbar-header" style="background-color: white;">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="background-color:#375a7f; ">
+                <span class="icon-bar" style="background-color:white;"></span>
+                <span class="icon-bar" style="background-color:white;"></span>
+                <span class="icon-bar" style="background-color:white; "></span>
+            </button>
+            @Html.ActionLink("ReviewSoft", "UsuarioBasico", "Account", new { area = "" }, new { @class = "navbar-brand", @style = "font-size: 162%; word-spacing: 12px; border-right: thick solid #0ce3ac; color:#375a7f;font-weight: bold;" })
+        </div>
+        <div class="container">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Software", "Index", "SOFTWAREUsuario")</li>                    
+                </ul>
+                @Html.Partial("_LoginPartial")
+                @*<ul class="nav navbar-nav navbar-right">
+                    </ul>*@
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - MAOR</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+

@@ -11,15 +11,26 @@ namespace ReviewSoftMVC.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Web.Mvc;
+    using System.Data.Entity;
+
+
+
     public partial class SOFTWARE
     {
+        public class MovieGenreViewModel
+        {
+            public List<CATEGORIA> movies;
+            public SelectList categoria;
+            public string movieGenre { get; set; }
+        }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public SOFTWARE()
         {
             this.RETROALIMENTACION = new HashSet<RETROALIMENTACION>();
         }
-    
+
+      
         public int CODIGO { get; set; }
         public string NOMBRE { get; set; }
         public Nullable<bool> DEMO_GRATUITO { get; set; }

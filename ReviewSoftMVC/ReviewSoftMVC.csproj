@@ -205,6 +205,7 @@
     <Compile Include="Controllers\METRICAsController.cs" />
     <Compile Include="Controllers\PROFESIONsController.cs" />
     <Compile Include="Controllers\SOFTWAREsController.cs" />
+    <Compile Include="Controllers\SOFTWAREUsuarioController.cs" />
     <Compile Include="Controllers\TIPO_LICENCIAController.cs" />
     <Compile Include="Controllers\TIPO_PLATAFORMAController.cs" />
     <Compile Include="Controllers\USUARIOs1Controller.cs" />
@@ -440,6 +441,13 @@
     <Content Include="Views\EMPRESAs\Details.cshtml" />
     <Content Include="Views\EMPRESAs\Edit.cshtml" />
     <Content Include="Views\EMPRESAs\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutUser.cshtml" />
+    <Content Include="Views\Account\UsuarioBasico.cshtml" />
+    <Content Include="Views\SOFTWAREUsuario\Create.cshtml" />
+    <Content Include="Views\SOFTWAREUsuario\Delete.cshtml" />
+    <Content Include="Views\SOFTWAREUsuario\Details.cshtml" />
+    <Content Include="Views\SOFTWAREUsuario\Edit.cshtml" />
+    <Content Include="Views\SOFTWAREUsuario\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

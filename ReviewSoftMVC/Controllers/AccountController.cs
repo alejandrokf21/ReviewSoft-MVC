@@ -92,9 +92,9 @@ namespace ReviewSoftMVC.Controllers
                     {
                         return RedirectToAction("Administrador", "Account");
                     }
-                    if (user.TIPO_USUARIO == 3)
+                    if (user.TIPO_USUARIO == 2)
                     {
-
+                        return RedirectToAction("UsuarioBasico", "Account");
                     }
                     if (user.TIPO_USUARIO == 3)
                     {
@@ -491,6 +491,13 @@ namespace ReviewSoftMVC.Controllers
 
         [Authorize(Roles = "Administrador")]
         public ActionResult Administrador(string returnUrl)
+        {
+            ViewBag.ReturnUrl = returnUrl;
+            return View();
+        }
+
+        [Authorize]
+        public ActionResult UsuarioBasico(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
             return View();
