@@ -17,7 +17,7 @@ namespace ReviewSoftMVC.Controllers
         private object Movies;
 
         // GET: SOFTWAREUsuario
-        public ActionResult Index(string searchString, int softClassific)
+        public ActionResult Index(string searchString)
         {
             var soft = from q in db.SOFTWARE
                        select q;
@@ -27,8 +27,8 @@ namespace ReviewSoftMVC.Controllers
             ViewBag.cateDropdow = new SelectList(db.CATEGORIA, "CODIGO", "NOMBRE");
             ViewBag.platDrop = new SelectList(db.TIPO_PLATAFORMA, "CODIGO", "NOMBRE");
             int plat = Convert.ToInt16(Request["platDrop"]);
-            softClassific = plat;
-            if (!String.IsNullOrEmpty(searchString) && !softClassific.Equals(0))
+           
+            if (!String.IsNullOrEmpty(searchString) && !plat.Equals(null))
             {
                
                 soft = soft.Where(s => s.NOMBRE.Contains(searchString));
